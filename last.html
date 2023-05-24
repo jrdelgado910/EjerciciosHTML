@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        var pantalla = document.querySelector('canvas');
+        var pincel = pantalla.getContext('2d');
+
+        pincel.fillStyle = 'grey';
+        pincel.fillRect(0, 0, 600, 400);
+        pincel.fillStyle = 'red';
+        pincel.fillRect(0, 0, 40, 40);
+        pincel.fillStyle = 'green';
+        pincel.fillRect(40, 0, 40, 40);
+        pincel.fillStyle = 'blue';
+        pincel.fillRect(80, 0, 40, 40);
+        var color="blue";
+
+        var puedoDibujar = true;
+
+        function dibujarCirculo(evento) {
+            
+            if (puedoDibujar) {
+                var x = evento.pageX - pantalla.offsetLeft;
+                var y = evento.pageY - pantalla.offsetTop;
+                console.log(x,y)
+                if ((x > 0 && x < 40) && (y > 0 && y < 40)) {
+                    color = "red";
+                    console.log(color);
+                } else if ((x > 40 && x < 80) && (y > 0 && y < 40)) {
+                    color = "green";
+                } else if ((x > 80 && x < 120) && (y > 0 && y < 40)) {
+                    color = "blue";
+                }
+
+                if (x > 120 && y > 40) {
+                    pincel.fillStyle = color;
+                    pincel.beginPath();
+                    pincel.arc(x, y, 5, 0, 2 * 3.14);
+                    pincel.fill();
+                }
+
+                
+
+            }
+
+        }
+
+        pantalla.onclick = dibujarCirculo;
+        
+
+        pantalla.onmousemove = dibujarCirculo;
+
+        function habilitarDibujar() {
+
+            puedoDibujar = true;
+        }
+
+        function deshabilitarDibujar() {
+
+            puedoDibujar = false;
+        }
+
+        pantalla.onmousedown = habilitarDibujar;
+
+        pantalla.onmouseup = deshabilitarDibujar;
+
+    </script>
+
+</body>
+
+</html>

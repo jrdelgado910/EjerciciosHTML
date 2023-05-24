@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA</title>
+</head>
+
+<body>
+    <h2>Mundiales de la FIFA</h2>
+    <script>
+        function salto() {
+            document.write("<br>");
+        }
+
+        function print(params) {
+            salto();
+            document.write("<p>" + params + "</p>");
+        }
+        var fin = parseInt(prompt("Ingrese el años hasta donde quiere calcular el mundial"));
+        function mundiales(fin) {
+            var inicioMundial=1930;
+            while (inicioMundial <= fin) {
+                if (inicioMundial == 1942 || inicioMundial == 1946) {
+                    print("No se celebro Por WWII: " + inicioMundial);
+                } else {
+                    print("Los mundiales fueron en los años: " + inicioMundial);
+                }
+                inicioMundial += 4;
+            }
+            /*for (i = 1930; i < fin; i+= 4) {
+                print("Los mundiales fueron en los años: " + i)
+            }*/
+        }
+
+        mundiales(fin);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros pares</title>
+</head>
+
+<body>
+    <h2>Numeros pares</h2>
+    <script>
+        function salto() {
+            document.write("<br>");
+        }
+
+        function print(params) {
+            salto();
+            document.write("<p>" + params + "</p>");
+        }
+
+        var inicio = parseInt(prompt("Ingrese desde donde contar los pares: "));
+        var fin= parseInt(prompt("Ingrese hasta donde quiere contar los pares: "));
+
+
+        function calculoPares(i,f) {
+            if(i%2==0){
+                for (let index = i; index <= f; index+=2) {
+                   print("Los numero pares son: "+index);    
+                }
+            }else{
+                for (let index = i+1; index <=f; index+=2) {
+                   print("Los numero pares son: "+index);    
+                }
+            }
+
+            print("fin");   
+        }
+
+        calculoPares(inicio,fin);
+
+    </script>
+
+    
+
+</body>
+
+</html>

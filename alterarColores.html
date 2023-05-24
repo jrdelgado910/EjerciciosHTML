@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cambia de colores</title>
+</head>
+
+<body>
+    <canvas width="600" height="400" id="table"></canvas>
+    <script>
+        var board = document.getElementById("table");
+        var tb = board.getContext("2d");
+
+        var colores = ["red", "blue", "yellow", "grey", "orange", "black", "white"];
+        var cont = 0;
+        tb.fillStyle = "grey";
+        tb.fillRect(0, 0, 600, 400);
+
+        function dibujarCirculo(evento) {
+            tb.fillStyle = colores[cont];
+            tb.beginPath();
+            tb.arc(evento.pageX, evento.pageY, 10, 0, 2 * 3.14);
+            tb.fill();
+            console.log(evento.pageX, evento.pageY);
+        }
+
+        function changeColor() {
+            if (cont<colores.length) {
+                cont++;
+                
+            }else{
+                cont = 0;
+            }
+            
+        }
+
+        board.addEventListener('contextmenu', event => {
+            event.preventDefault();
+            changeColor();
+            console.log('Se ha hecho clic derecho en el canvas');
+        });
+
+        board.onclick = dibujarCirculo;
+
+
+
+    </script>
+
+</body>
+
+</html>

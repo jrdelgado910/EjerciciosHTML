@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas</title>
+</head>
+
+<body>
+    <h2>Recetas</h2>
+    <input type="text" id="ingrediente">
+    <button onclick="ingresarIngredientres()">Agregar</button>
+    <div id="tabla-ingredientes"></div>
+
+    <script>
+        var ingredientes = [];
+        var tablaIngredientes = document.getElementById('tabla-ingredientes');
+        var tablaHtml = document.createElement('table');
+
+        var theadHtml = document.createElement('thead');
+        var trEncabezadoHtml = document.createElement('tr');
+        var thEncabezadoHtml = document.createElement('th');
+        thEncabezadoHtml.textContent = 'Ingredientes';
+
+        trEncabezadoHtml.appendChild(thEncabezadoHtml);
+        theadHtml.appendChild(trEncabezadoHtml);
+        var tbodyHtml = document.createElement('tbody');
+        var con = 0;
+        function ingresarIngredientres() {
+            
+            var inputIngrediente = document.getElementById("ingrediente").value;
+            if (ingredientes.length == 0) {
+                alert("Ingrediente almacenado");
+                ingredientes.push(inputIngrediente);
+                var trHtml = document.createElement('tr');
+                var tdHtml = document.createElement('td');
+                tdHtml.textContent = ingredientes[con];
+                con++;
+                trHtml.appendChild(tdHtml);
+                tbodyHtml.appendChild(trHtml);
+                inputIngrediente = document.getElementById("ingrediente");
+                inputIngrediente.value = "";
+                inputIngrediente.focus();
+            } else {
+                if (!ingredientes.includes(inputIngrediente)) {
+                    alert("Ingrediente almacenado");
+                    ingredientes.push(inputIngrediente);
+                    var trHtml = document.createElement('tr');
+                    var tdHtml = document.createElement('td');
+                    tdHtml.textContent = ingredientes[con];
+                    con++;
+                    trHtml.appendChild(tdHtml);
+                    tbodyHtml.appendChild(trHtml);
+                    inputIngrediente = document.getElementById("ingrediente");
+                    inputIngrediente.value = "";
+                    inputIngrediente.focus();
+                } else {
+                    alert("Ingrediente repetido");
+                    inputIngrediente = document.getElementById("ingrediente");
+                    inputIngrediente.focus();
+                    inputIngrediente.value = "";
+                }
+
+            }
+
+            tablaHtml.appendChild(theadHtml);
+            tablaHtml.appendChild(tbodyHtml);
+            tablaIngredientes.appendChild(tablaHtml);
+        }
+
+    </script>
+
+</body>
+
+</html>

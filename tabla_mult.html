@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla</title>
+</head>
+
+<body>
+    <h2>Tabla de multiplicacion</h2>
+    <script>
+        function salto() {
+            document.write("<br>");
+        }
+
+        function print(params) {
+            salto();
+            document.write("<p>" + params + "</p>");
+        }
+
+        var multiplicando = parseInt(prompt("Ingrese el multiplicando: "));
+        var multiplicador = parseInt(prompt("Ingrese el maximo multiplicador: "));
+        function table(x, y) {
+            var u = 0;
+            while (u <= y) {
+                print(x + " x " + u + " = " + (x * u));
+                u += 1;
+            }
+        }
+        table(multiplicando,multiplicador);
+
+    </script>
+</body>
+
+</html>

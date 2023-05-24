@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+</head>
+
+<body>
+    <h2>Juego</h2>
+
+    <script>
+        function salto() {
+            document.write("<br>");
+        }
+
+        function print(params) {
+            salto();
+            document.write("<p>" + params + "</p>");
+        }
+
+        var aleatorio = Math.round(Math.random() * 10);
+
+
+        function game(aleatorio) {
+            alert("Tiene tres oportunidades para adivinar");
+            var num = 0;
+            for (let index = 0; index < 3; index++) {
+                num = parseInt(prompt("Intento: " + (index + 1) + " Ingrese un numero entre 1 hasta 10"));
+                if (num > 10) {
+                    print("Ingrese un numero en el rango (1-10)");
+                } else {
+                    if (aleatorio == num) {
+                        alert("¡¡¡ACERTO!!!");
+                        print("¡¡¡ACERTO!!!");
+                        print("Numero de la suerte <strong>" + aleatorio + "</strong>");
+                        break;
+                    } else {
+                        alert("Fallaste, sigue intentando :(")
+                    }
+                }
+            }
+        }
+        game(aleatorio);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <canvas width="900" height="900" id="tablero"></canvas>
+    <script>
+        var table = document.getElementById("tablero");
+        var ctx = table.getContext("2d");
+        var ejex = 0;
+        var ejey = 0;
+
+
+        function dibujaCuadrados(x, y, color) {
+            ctx.fillStyle = color;
+            ctx.strokeStyle = "black";
+            for (let index = 0; index < x; index++) {
+                ctx.fillRect(ejex, 0, 50, 50);
+                ctx.strokeRect(ejex, 0, 50, 50);
+                ejex += 50;
+            }
+            for (let index = 0; index < y; index++) {
+                ctx.fillRect(0, ejey, 50, 50);
+                ctx.strokeRect(0, ejey, 50, 50);
+                ejey += 50;
+            }
+
+        }
+        dibujaCuadrados(3, 4, "yellow");
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

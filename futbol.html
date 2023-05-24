@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbol</title>
+</head>
+<body>
+    <h2>Calculo de Puntos en la liga</h2>
+
+    <script>
+        function salto() {
+            document.write("<br>");  
+        }
+
+        function print(params) {
+            salto(); 
+            document.write("<p>"+params+"</p>"); 
+        }
+        var name = prompt("Ingrese su nombre:");
+        var equi = prompt(name+" ingrese el nombre del equipo:");
+        var vic = parseInt(prompt(name+" ingrese las victorias de "+equi));
+        var emp = parseInt(prompt(name+" ingrese los empates de "+equi));
+
+        function puntos(victorias,empates,name,equipo) {
+            var pliga=(victorias*3)+empates;
+            return pliga;
+        }
+
+        function comparacion(puntos){
+            if(puntos>28){
+                print("El equipo esta mejor que el año pasado");
+            }else if(puntos<28){
+                print("El equipo esta peor que el año pasado");
+            }else{
+                print("El equipo esta igual que el año pasado");
+            }
+
+        }
+        
+        print("Los puntos de la liga del equipo <strong>"+equi+"</strong> es <strong>"+puntos(vic,emp,name,equi)+"</strong>");
+
+        comparacion(puntos(vic,emp,name,equi));
+    </script>
+    
+</body>
+</html>

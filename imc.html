@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo -IMC</title>
+</head>
+<body>
+    <h2>Calculo de Indice de Masa Corporal</h2>
+
+    <script>
+        function salto() {
+            document.write("<br>");  
+        }
+
+        function print(params) {
+            salto(); 
+            document.write("<p>"+params+"</p>"); 
+        }
+
+        var name=prompt("Ingrese su nombre:");
+        var peso=parseInt(prompt(name+" ingrese su peso (Kg)"));
+        var altura=parseFloat(prompt(name+" ingrese su altura (m)"));
+
+        function imc(peso,altura,name) {
+            
+            var imc=peso / Math.pow(altura,2);
+            print(name+" su IMC es "+imc);
+            if(imc<18.5){
+                print(name+" usted tiene insuficiencia ponderada");
+            }else if(imc>=18.5 && imc<=24.9){
+                print(name+" usted tiene intervalo normal");
+            }else if(imc>=25 && imc<29.9){
+                print(name+" usted tiene preobesidad");
+            }else if(imc>=30 && imc<34.9){
+                print(name+" usted tiene obesidad clase 1");
+            }else if(imc>=35 && imc<39.9){
+                print(name+" usted tiene obesidad clase 2");
+            }else if(imc>=40){
+                print(name+" usted tiene obesidad clase 3");
+            }
+        }
+        
+        imc(peso,altura,name);
+
+
+    </script>
+    
+</body>
+</html>

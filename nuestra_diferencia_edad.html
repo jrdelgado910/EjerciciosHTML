@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diferencia de edad</title>
+</head>
+<body>
+    <h2>¿Cuántos años de diferencia tengo con mi hermano?</h2>
+    <script>
+        function salto() {
+            document.write("<br>");  
+        }
+
+        function print(params) {
+            document.write("<p>"+params+"</p>");
+            salto();  
+        }
+
+        var yo=25, bro=22;
+        
+        function diferencia(yo,bro){
+            print("la diferencia de edad con mi hermano es: "+Math.abs(yo-bro)+" años");
+        }
+
+        diferencia(yo,bro);
+
+    </script>
+    
+</body>
+</html>

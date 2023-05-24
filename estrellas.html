@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>estrallas</title>
+</head>
+<body>
+    <h2>Estrellas</h2>
+    
+    <script>
+
+        var col=parseInt(prompt("Ingrese las columnas"));
+        var fil=parseInt(prompt("ingrese las filas"));
+
+        function estrellas(col,fil) {
+            for (let i = 0; i < fil; i++) {
+                for (let j = 0; j < col; j++) {
+                    document.write("*");
+                }
+                document.write("<br>");  
+            }
+        }
+
+        estrellas(col,fil);
+
+    </script>
+</body>
+</html>
